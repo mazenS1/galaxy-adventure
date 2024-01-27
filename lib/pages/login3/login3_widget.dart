@@ -103,14 +103,12 @@ class _Login3WidgetState extends State<Login3Widget>
         body: Container(
           height: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [
-                FlutterFlowTheme.of(context).primary,
-                FlutterFlowTheme.of(context).tertiary
-              ],
-              stops: [0.0, 1.0],
-              begin: AlignmentDirectional(0.87, -1.0),
-              end: AlignmentDirectional(-0.87, 1.0),
+            color: FlutterFlowTheme.of(context).secondaryBackground,
+            image: DecorationImage(
+              fit: BoxFit.cover,
+              image: Image.asset(
+                'assets/images/preview.png',
+              ).image,
             ),
           ),
           alignment: AlignmentDirectional(0.0, -1.0),
@@ -129,7 +127,7 @@ class _Login3WidgetState extends State<Login3Widget>
                     ),
                     alignment: AlignmentDirectional(0.0, 0.0),
                     child: Text(
-                      'Universe\nadventure',
+                      'Universe Adventure',
                       textAlign: TextAlign.center,
                       style: FlutterFlowTheme.of(context).displaySmall.override(
                             fontFamily: 'Readex Pro',
@@ -147,7 +145,6 @@ class _Login3WidgetState extends State<Login3Widget>
                       maxWidth: 570.0,
                     ),
                     decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
                       boxShadow: [
                         BoxShadow(
                           blurRadius: 4.0,
@@ -155,6 +152,15 @@ class _Login3WidgetState extends State<Login3Widget>
                           offset: Offset(0.0, 2.0),
                         )
                       ],
+                      gradient: LinearGradient(
+                        colors: [
+                          Color(0xFF2E0038),
+                          FlutterFlowTheme.of(context).secondaryBackground
+                        ],
+                        stops: [0.5, 1.0],
+                        begin: AlignmentDirectional(0.0, -1.0),
+                        end: AlignmentDirectional(0, 1.0),
+                      ),
                       borderRadius: BorderRadius.circular(12.0),
                     ),
                     child: Align(
@@ -338,7 +344,7 @@ class _Login3WidgetState extends State<Login3Widget>
                                       0.0, 0.0, 0.0, 0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
-                                  color: FlutterFlowTheme.of(context).primary,
+                                  color: Color(0xFF5E007E),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .titleSmall
                                       .override(

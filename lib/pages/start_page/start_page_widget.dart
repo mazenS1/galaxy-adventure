@@ -91,7 +91,7 @@ class _StartPageWidgetState extends State<StartPageWidget>
                 fit: BoxFit.cover,
                 alignment: AlignmentDirectional(0.1, -0.1),
                 image: Image.asset(
-                  'assets/images/star-trails-1846734_1920.jpg',
+                  'assets/images/preview.png',
                 ).image,
               ),
             ),
@@ -119,7 +119,7 @@ class _StartPageWidgetState extends State<StartPageWidget>
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).primary,
+                      color: Color(0xFF5E007E),
                       textStyle:
                           FlutterFlowTheme.of(context).displaySmall.override(
                                 fontFamily: 'Readex Pro',
