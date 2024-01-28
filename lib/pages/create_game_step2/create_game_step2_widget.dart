@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/api_requests/api_calls.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -7,7 +6,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'create_game_step2_model.dart';
@@ -83,7 +81,7 @@ class _CreateGameStep2WidgetState extends State<CreateGameStep2Widget> {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: Image.asset(
-                  'assets/images/page_background@2x.png',
+                  'assets/images/preview.png',
                 ).image,
               ),
             ),
@@ -106,6 +104,12 @@ class _CreateGameStep2WidgetState extends State<CreateGameStep2Widget> {
                       width: MediaQuery.sizeOf(context).width * 1.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).accent1,
+                        image: DecorationImage(
+                          fit: BoxFit.cover,
+                          image: Image.asset(
+                            'assets/images/preview.png',
+                          ).image,
+                        ),
                         borderRadius: BorderRadius.only(
                           bottomLeft: Radius.circular(16.0),
                           bottomRight: Radius.circular(16.0),
@@ -130,27 +134,9 @@ class _CreateGameStep2WidgetState extends State<CreateGameStep2Widget> {
                                       MainAxisAlignment.spaceBetween,
                                   children: [
                                     Text(
-                                      'New Game',
+                                      'Earth!',
                                       style: FlutterFlowTheme.of(context)
                                           .displaySmall,
-                                    ),
-                                    InkWell(
-                                      splashColor: Colors.transparent,
-                                      focusColor: Colors.transparent,
-                                      hoverColor: Colors.transparent,
-                                      highlightColor: Colors.transparent,
-                                      onTap: () async {
-                                        await widget.gameRecord!.reference
-                                            .delete();
-
-                                        context.goNamed('HomePage');
-                                      },
-                                      child: FaIcon(
-                                        FontAwesomeIcons.trashAlt,
-                                        color: FlutterFlowTheme.of(context)
-                                            .accent1,
-                                        size: 24.0,
-                                      ),
                                     ),
                                   ],
                                 ),
@@ -161,216 +147,121 @@ class _CreateGameStep2WidgetState extends State<CreateGameStep2Widget> {
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 5.0, 0.0),
+                                    Align(
+                                      alignment:
+                                          AlignmentDirectional(0.0, -1.0),
                                       child: Text(
-                                        'Code:',
+                                        'Our First Step To Learn About The Universe',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Inter',
-                                              fontSize: 18.0,
-                                            ),
+                                            .bodyMedium,
                                       ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 8.0, 0.0),
-                                      child: Text(
-                                        widget.gameRecord!.code.toString(),
-                                        style: FlutterFlowTheme.of(context)
-                                            .displaySmall
-                                            .override(
-                                              fontFamily: 'Readex Pro',
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .primary,
-                                              fontSize: 22.0,
-                                            ),
-                                      ),
-                                    ),
-                                    Text(
-                                      'Invite your friends',
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
                                     ),
                                   ],
                                 ),
                               ),
-                              Row(
+                              Column(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 20.0, 0.0, 0.0),
-                                    child: Text(
-                                      'Categories',
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineMedium,
+                                  Align(
+                                    alignment: AlignmentDirectional(0.0, 0.0),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 12.0, 0.0, 0.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.asset(
+                                          'assets/images/3703673003.gif',
+                                          width: 200.0,
+                                          height: 200.0,
+                                          fit: BoxFit.cover,
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ],
-                              ),
-                              Builder(
-                                builder: (context) {
-                                  final categories =
-                                      widget.gameRecord?.categories?.toList() ??
-                                          [];
-                                  return Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: List.generate(categories.length,
-                                        (categoriesIndex) {
-                                      final categoriesItem =
-                                          categories[categoriesIndex];
-                                      return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 3.0, 0.0, 0.0),
-                                        child: FutureBuilder<ApiCallResponse>(
-                                          future: CategoryCall.call(
-                                            id: categoriesItem,
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: SizedBox(
-                                                  width: 50.0,
-                                                  height: 50.0,
-                                                  child:
-                                                      CircularProgressIndicator(
-                                                    valueColor:
-                                                        AlwaysStoppedAnimation<
-                                                            Color>(
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primary,
-                                                    ),
-                                                  ),
-                                                ),
-                                              );
-                                            }
-                                            final textCategoryResponse =
-                                                snapshot.data!;
-                                            return Text(
-                                              getJsonField(
-                                                textCategoryResponse.jsonBody,
-                                                r'''$.title''',
-                                              ).toString(),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyMedium,
-                                            );
-                                          },
-                                        ),
-                                      );
-                                    }),
-                                  );
-                                },
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 20.0, 0.0, 0.0),
                                 child: Text(
-                                  'Players',
+                                  ' Some Facts About Earth!',
                                   style: FlutterFlowTheme.of(context)
                                       .headlineMedium,
                                 ),
                               ),
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 25.0),
-                                child: Builder(
-                                  builder: (context) {
-                                    final players =
-                                        containerGamesRecord.users.toList();
-                                    return Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: List.generate(players.length,
-                                          (playersIndex) {
-                                        final playersItem =
-                                            players[playersIndex];
-                                        return Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 5.0, 0.0, 0.0),
-                                          child: StreamBuilder<UsersRecord>(
-                                            stream: UsersRecord.getDocument(
-                                                playersItem),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child: SizedBox(
-                                                    width: 50.0,
-                                                    height: 50.0,
-                                                    child:
-                                                        CircularProgressIndicator(
-                                                      valueColor:
-                                                          AlwaysStoppedAnimation<
-                                                              Color>(
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primary,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                );
-                                              }
-                                              final containerUsersRecord =
-                                                  snapshot.data!;
-                                              return Container(
-                                                width: double.infinity,
-                                                height: 70.0,
-                                                decoration: BoxDecoration(
-                                                  color: Color(0xFFEEEEEE),
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          12.0),
-                                                  border: Border.all(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .accent1,
-                                                    width: 1.0,
-                                                  ),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          15.0, 0.0, 15.0, 0.0),
-                                                  child: Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceBetween,
-                                                    children: [
-                                                      Text(
-                                                        containerUsersRecord
-                                                            .displayName,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .titleMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Readex Pro',
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondary,
-                                                                ),
-                                                      ),
-                                                    ],
-                                                  ),
-                                                ),
-                                              );
-                                            },
-                                          ),
-                                        );
-                                      }),
-                                    );
-                                  },
-                                ),
+                              Text(
+                                'Study them well ;)',
+                                style: FlutterFlowTheme.of(context).bodyMedium,
+                              ),
+                              Divider(
+                                thickness: 5.0,
+                                color: Color(0xFF4B00F2),
+                              ),
+                              ListView(
+                                padding: EdgeInsets.zero,
+                                shrinkWrap: true,
+                                scrollDirection: Axis.vertical,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Earth is 4.543 billion years old!',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Earth rotates at around 1000 miles an hour',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Text(
+                                      'It is the only planet we have found that contains life!',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall,
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 10.0, 0.0, 0.0),
+                                    child: Text(
+                                      'Earth is the third closest planet to The Sun!',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall,
+                                    ),
+                                  ),
+                                  Container(
+                                    width: 50.0,
+                                    height: 100.0,
+                                    decoration: BoxDecoration(
+                                      color: Color(0x00151820),
+                                    ),
+                                    child: Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 5.0, 0.0, 0.0),
+                                      child: ClipRRect(
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
+                                        child: Image.asset(
+                                          'assets/images/1155916463.gif',
+                                          width: 50.0,
+                                          height: 100.0,
+                                          fit: BoxFit.contain,
+                                          alignment: Alignment(0.0, 0.0),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
@@ -410,7 +301,7 @@ class _CreateGameStep2WidgetState extends State<CreateGameStep2Widget> {
                                         0.0, 0.0, 0.0, 0.0),
                                     iconPadding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
-                                    color: FlutterFlowTheme.of(context).primary,
+                                    color: Color(0xFF2E0038),
                                     textStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
