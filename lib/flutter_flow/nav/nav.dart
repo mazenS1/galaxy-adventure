@@ -147,6 +147,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'CreateAccount1',
           path: '/createAccount1',
           builder: (context, params) => CreateAccount1Widget(),
+        ),
+        FFRoute(
+          name: 'GamePageCopy',
+          path: '/gamePageCopy',
+          builder: (context, params) => GamePageCopyWidget(
+            gameRef: params.getParam(
+                'gameRef', ParamType.DocumentReference, false, ['games']),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

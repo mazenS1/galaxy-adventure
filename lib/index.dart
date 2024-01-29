@@ -12,3 +12,5 @@ export '/pages/game_page/game_page_widget.dart' show GamePageWidget;
 export '/pages/login3/login3_widget.dart' show Login3Widget;
 export '/pages/create_account1/create_account1_widget.dart'
     show CreateAccount1Widget;
+export '/pages/game_page_copy/game_page_copy_widget.dart'
+    show GamePageCopyWidget;
