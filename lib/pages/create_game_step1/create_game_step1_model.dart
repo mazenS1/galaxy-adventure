@@ -7,6 +7,7 @@ import 'create_game_step1_widget.dart' show CreateGameStep1Widget;
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class CreateGameStep1Model extends FlutterFlowModel<CreateGameStep1Widget> {

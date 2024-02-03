@@ -83,18 +83,22 @@ class _StartPageWidgetState extends State<StartPageWidget>
       backgroundColor: Color(0xFFF5F5F5),
       body: Stack(
         children: [
+          Stack(
+            children: [
+              Lottie.asset(
+                'assets/lottie_animations/Animation_-_1706560713375.json',
+                width: 535.0,
+                height: 881.0,
+                fit: BoxFit.cover,
+                animate: true,
+              ),
+            ],
+          ),
           Container(
             width: MediaQuery.sizeOf(context).width * 1.0,
             height: MediaQuery.sizeOf(context).height * 1.0,
             decoration: BoxDecoration(
-              color: Color(0xFFEEEEEE),
-              image: DecorationImage(
-                fit: BoxFit.cover,
-                alignment: AlignmentDirectional(0.1, -0.1),
-                image: Image.asset(
-                  'assets/images/preview.png',
-                ).image,
-              ),
+              color: Color(0x00EEEEEE),
             ),
             alignment: AlignmentDirectional(0.0, 0.0),
             child: Column(
@@ -112,7 +116,7 @@ class _StartPageWidgetState extends State<StartPageWidget>
                       style:
                           FlutterFlowTheme.of(context).displayMedium.override(
                                 fontFamily: 'Readex Pro',
-                                color: Color(0xFF5E007E),
+                                color: FlutterFlowTheme.of(context).primary,
                               ),
                     ),
                   ),
@@ -138,7 +142,7 @@ class _StartPageWidgetState extends State<StartPageWidget>
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                       iconPadding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: Color(0xFF5E007E),
+                      color: FlutterFlowTheme.of(context).secondary,
                       textStyle:
                           FlutterFlowTheme.of(context).displaySmall.override(
                                 fontFamily: 'Readex Pro',
