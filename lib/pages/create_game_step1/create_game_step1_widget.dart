@@ -153,28 +153,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                       0.0, 15.0, 0.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
-                                      context.pushNamed(
-                                        'CreateGameStep1',
-                                        queryParameters: {
-                                          'gameRecord': serializeParam(
-                                            widget.gameRecord,
-                                            ParamType.Document,
-                                          ),
-                                          'categoryOffset': serializeParam(
-                                            functions.generateRandomOffset(),
-                                            ParamType.int,
-                                          ),
-                                        }.withoutNulls,
-                                        extra: <String, dynamic>{
-                                          'gameRecord': widget.gameRecord,
-                                          kTransitionInfoKey: TransitionInfo(
-                                            hasTransition: true,
-                                            transitionType:
-                                                PageTransitionType.fade,
-                                            duration: Duration(milliseconds: 0),
-                                          ),
-                                        },
-                                      );
+                                      context.pushNamed('CreateGameStep2');
                                     },
                                     text: 'Earth',
                                     options: FFButtonOptions(
@@ -231,7 +210,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                         },
                                       );
                                     },
-                                    text: 'Mars',
+                                    text: 'Mars  (coming soon:)',
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 70.0,
@@ -286,7 +265,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                         },
                                       );
                                     },
-                                    text: 'Uranus',
+                                    text: 'Uranus  (coming soon:)',
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 70.0,
@@ -341,7 +320,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                         },
                                       );
                                     },
-                                    text: 'Jupiter',
+                                    text: 'Jupiter  (coming soon:)',
                                     options: FFButtonOptions(
                                       width: double.infinity,
                                       height: 70.0,
@@ -401,17 +380,17 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                               text: 'More Categories',
                               options: FFButtonOptions(
                                 width: double.infinity,
-                                height: 70.0,
+                                height: 3.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF5E007E),
+                                color: Color(0x005E007E),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: Colors.white,
+                                      color: Color(0x00FFFFFF),
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.w600,
                                     ),
@@ -445,17 +424,17 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                               text: 'Next Step',
                               options: FFButtonOptions(
                                 width: double.infinity,
-                                height: 70.0,
+                                height: 0.0,
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
                                 iconPadding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 0.0),
-                                color: Color(0xFF884FFF),
+                                color: Color(0x00884FFF),
                                 textStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
                                       fontFamily: 'Inter',
-                                      color: Colors.white,
+                                      color: Color(0x00FFFFFF),
                                       fontSize: 20.0,
                                       fontWeight: FontWeight.w600,
                                     ),

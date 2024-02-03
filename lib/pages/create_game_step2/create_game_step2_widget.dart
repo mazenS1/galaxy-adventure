@@ -276,14 +276,8 @@ class _CreateGameStep2WidgetState extends State<CreateGameStep2Widget> {
                                           score: 0,
                                         ));
 
-                                    context.goNamed(
-                                      'GamePage',
-                                      queryParameters: {
-                                        'gameRef': serializeParam(
-                                          widget.gameRecord?.reference,
-                                          ParamType.DocumentReference,
-                                        ),
-                                      }.withoutNulls,
+                                    context.pushNamed(
+                                      'GamePageCopy',
                                       extra: <String, dynamic>{
                                         kTransitionInfoKey: TransitionInfo(
                                           hasTransition: true,

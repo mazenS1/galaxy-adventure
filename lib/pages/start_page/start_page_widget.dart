@@ -7,6 +7,7 @@ import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 import 'start_page_model.dart';
 export 'start_page_model.dart';
@@ -100,10 +101,28 @@ class _StartPageWidgetState extends State<StartPageWidget>
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset(
-                  'assets/images/Earth_Western_Hemisphere_transparent_background.png',
-                  height: 270.0,
+                Align(
+                  alignment: AlignmentDirectional(0.0, -1.0),
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
+                    child: Text(
+                      'Explore The Universe!!',
+                      textAlign: TextAlign.center,
+                      style:
+                          FlutterFlowTheme.of(context).displayMedium.override(
+                                fontFamily: 'Readex Pro',
+                                color: Color(0xFF5E007E),
+                              ),
+                    ),
+                  ),
+                ),
+                Lottie.asset(
+                  'assets/lottie_animations/Animation_-_1706554681211.json',
+                  width: 150.0,
+                  height: 130.0,
                   fit: BoxFit.cover,
+                  animate: true,
                 ),
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),

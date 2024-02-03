@@ -151,10 +151,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'GamePageCopy',
           path: '/gamePageCopy',
-          builder: (context, params) => GamePageCopyWidget(
-            gameRef: params.getParam(
-                'gameRef', ParamType.DocumentReference, false, ['games']),
-          ),
+          builder: (context, params) => GamePageCopyWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
