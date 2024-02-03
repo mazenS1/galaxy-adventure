@@ -9,11 +9,11 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'create_game_step2_model.dart';
-export 'create_game_step2_model.dart';
+import 'earth_info_model.dart';
+export 'earth_info_model.dart';
 
-class CreateGameStep2Widget extends StatefulWidget {
-  const CreateGameStep2Widget({
+class EarthInfoWidget extends StatefulWidget {
+  const EarthInfoWidget({
     super.key,
     this.gameRecord,
   });
@@ -21,18 +21,18 @@ class CreateGameStep2Widget extends StatefulWidget {
   final GamesRecord? gameRecord;
 
   @override
-  State<CreateGameStep2Widget> createState() => _CreateGameStep2WidgetState();
+  State<EarthInfoWidget> createState() => _EarthInfoWidgetState();
 }
 
-class _CreateGameStep2WidgetState extends State<CreateGameStep2Widget> {
-  late CreateGameStep2Model _model;
+class _EarthInfoWidgetState extends State<EarthInfoWidget> {
+  late EarthInfoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreateGameStep2Model());
+    _model = createModel(context, () => EarthInfoModel());
   }
 
   @override
@@ -284,7 +284,7 @@ class _CreateGameStep2WidgetState extends State<CreateGameStep2Widget> {
                                             ));
 
                                         context.pushNamed(
-                                          'GamePageCopy',
+                                          'quiz1',
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
                                               hasTransition: true,

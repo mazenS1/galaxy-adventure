@@ -434,8 +434,7 @@ class _Login3WidgetState extends State<Login3Widget>
                                                 SystemMouseCursors.click,
                                             recognizer: TapGestureRecognizer()
                                               ..onTap = () async {
-                                                context.pushNamed(
-                                                    'CreateAccount1');
+                                                context.pushNamed('signUp');
                                               },
                                           )
                                         ],

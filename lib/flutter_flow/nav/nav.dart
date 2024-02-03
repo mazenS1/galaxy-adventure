@@ -93,9 +93,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => StartPageWidget(),
         ),
         FFRoute(
-          name: 'OnboardingPage',
-          path: '/onboardingPage',
-          builder: (context, params) => OnboardingPageWidget(),
+          name: 'enterName',
+          path: '/enterName',
+          builder: (context, params) => EnterNameWidget(),
         ),
         FFRoute(
           name: 'HomePage',
@@ -103,30 +103,30 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
-          name: 'JoinGame',
-          path: '/joinGame',
-          builder: (context, params) => JoinGameWidget(
+          name: 'settings',
+          path: '/settings',
+          builder: (context, params) => SettingsWidget(
             gameCode: params.getParam('gameCode', ParamType.int),
           ),
         ),
         FFRoute(
-          name: 'CreateGameStep1',
-          path: '/createGameStep1',
+          name: 'selectLevel',
+          path: '/selectLevel',
           asyncParams: {
             'gameRecord': getDoc(['games'], GamesRecord.fromSnapshot),
           },
-          builder: (context, params) => CreateGameStep1Widget(
+          builder: (context, params) => SelectLevelWidget(
             gameRecord: params.getParam('gameRecord', ParamType.Document),
             categoryOffset: params.getParam('categoryOffset', ParamType.int),
           ),
         ),
         FFRoute(
-          name: 'CreateGameStep2',
-          path: '/createGameStep2',
+          name: 'earthInfo',
+          path: '/earthInfo',
           asyncParams: {
             'gameRecord': getDoc(['games'], GamesRecord.fromSnapshot),
           },
-          builder: (context, params) => CreateGameStep2Widget(
+          builder: (context, params) => EarthInfoWidget(
             gameRecord: params.getParam('gameRecord', ParamType.Document),
           ),
         ),
@@ -144,16 +144,37 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => Login3Widget(),
         ),
         FFRoute(
-          name: 'CreateAccount1',
-          path: '/createAccount1',
-          builder: (context, params) => CreateAccount1Widget(),
+          name: 'signUp',
+          path: '/signUp',
+          builder: (context, params) => SignUpWidget(),
         ),
         FFRoute(
-          name: 'GamePageCopy',
-          path: '/gamePageCopy',
-          builder: (context, params) => GamePageCopyWidget(),
+          name: 'quiz1',
+          path: '/quiz1',
+          builder: (context, params) => Quiz1Widget(),
+        ),
+        FFRoute(
+          name: 'quiz2',
+          path: '/quiz2',
+          builder: (context, params) => Quiz2Widget(),
+        ),
+        FFRoute(
+          name: 'quiz3',
+          path: '/quiz3',
+          builder: (context, params) => Quiz3Widget(),
+        ),
+        FFRoute(
+          name: 'quiz4',
+          path: '/quiz4',
+          builder: (context, params) => Quiz4Widget(),
+        ),
+        FFRoute(
+          name: 'congratsPage',
+          path: '/congratsPage',
+          builder: (context, params) => CongratsPageWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
+      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

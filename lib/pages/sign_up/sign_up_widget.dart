@@ -8,25 +8,25 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'create_account1_model.dart';
-export 'create_account1_model.dart';
+import 'sign_up_model.dart';
+export 'sign_up_model.dart';
 
-class CreateAccount1Widget extends StatefulWidget {
-  const CreateAccount1Widget({super.key});
+class SignUpWidget extends StatefulWidget {
+  const SignUpWidget({super.key});
 
   @override
-  State<CreateAccount1Widget> createState() => _CreateAccount1WidgetState();
+  State<SignUpWidget> createState() => _SignUpWidgetState();
 }
 
-class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
-  late CreateAccount1Model _model;
+class _SignUpWidgetState extends State<SignUpWidget> {
+  late SignUpModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreateAccount1Model());
+    _model = createModel(context, () => SignUpModel());
 
     _model.emailAddressController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
@@ -80,7 +80,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                 Expanded(
                   flex: 8,
                   child: Container(
-                    width: 100.0,
+                    width: double.infinity,
                     height: double.infinity,
                     decoration: BoxDecoration(
                       color: Color(0x00105DFB),
@@ -399,7 +399,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                         }
 
                                         context.pushNamedAuth(
-                                          'OnboardingPage',
+                                          'enterName',
                                           context.mounted,
                                           extra: <String, dynamic>{
                                             kTransitionInfoKey: TransitionInfo(
@@ -467,7 +467,7 @@ class _CreateAccount1WidgetState extends State<CreateAccount1Widget> {
                                                 SystemMouseCursors.click,
                                             recognizer: TapGestureRecognizer()
                                               ..onTap = () async {
-                                                context.pushNamed('JoinGame');
+                                                context.pushNamed('settings');
                                               },
                                           )
                                         ],

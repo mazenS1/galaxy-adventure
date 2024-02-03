@@ -8,11 +8,11 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'create_game_step1_model.dart';
-export 'create_game_step1_model.dart';
+import 'select_level_model.dart';
+export 'select_level_model.dart';
 
-class CreateGameStep1Widget extends StatefulWidget {
-  const CreateGameStep1Widget({
+class SelectLevelWidget extends StatefulWidget {
+  const SelectLevelWidget({
     super.key,
     this.gameRecord,
     this.categoryOffset,
@@ -22,18 +22,18 @@ class CreateGameStep1Widget extends StatefulWidget {
   final int? categoryOffset;
 
   @override
-  State<CreateGameStep1Widget> createState() => _CreateGameStep1WidgetState();
+  State<SelectLevelWidget> createState() => _SelectLevelWidgetState();
 }
 
-class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
-  late CreateGameStep1Model _model;
+class _SelectLevelWidgetState extends State<SelectLevelWidget> {
+  late SelectLevelModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreateGameStep1Model());
+    _model = createModel(context, () => SelectLevelModel());
   }
 
   @override
@@ -162,7 +162,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                           0.0, 15.0, 0.0, 0.0),
                                       child: FFButtonWidget(
                                         onPressed: () async {
-                                          context.pushNamed('CreateGameStep2');
+                                          context.pushNamed('earthInfo');
                                         },
                                         text: 'Earth',
                                         options: FFButtonOptions(
@@ -201,7 +201,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.pushNamed(
-                                            'CreateGameStep1',
+                                            'selectLevel',
                                             queryParameters: {
                                               'gameRecord': serializeParam(
                                                 widget.gameRecord,
@@ -262,7 +262,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.pushNamed(
-                                            'CreateGameStep1',
+                                            'selectLevel',
                                             queryParameters: {
                                               'gameRecord': serializeParam(
                                                 widget.gameRecord,
@@ -323,7 +323,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                       child: FFButtonWidget(
                                         onPressed: () async {
                                           context.pushNamed(
-                                            'CreateGameStep1',
+                                            'selectLevel',
                                             queryParameters: {
                                               'gameRecord': serializeParam(
                                                 widget.gameRecord,
@@ -387,7 +387,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     context.pushNamed(
-                                      'CreateGameStep1',
+                                      'selectLevel',
                                       queryParameters: {
                                         'gameRecord': serializeParam(
                                           widget.gameRecord,
@@ -441,7 +441,7 @@ class _CreateGameStep1WidgetState extends State<CreateGameStep1Widget> {
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     context.pushNamed(
-                                      'CreateGameStep2',
+                                      'earthInfo',
                                       queryParameters: {
                                         'gameRecord': serializeParam(
                                           containerGamesRecord,

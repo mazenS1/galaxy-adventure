@@ -1,16 +1,15 @@
 // Export pages
 export '/pages/start_page/start_page_widget.dart' show StartPageWidget;
-export '/pages/onboarding_page/onboarding_page_widget.dart'
-    show OnboardingPageWidget;
+export '/pages/enter_name/enter_name_widget.dart' show EnterNameWidget;
 export '/pages/home_page/home_page_widget.dart' show HomePageWidget;
-export '/pages/join_game/join_game_widget.dart' show JoinGameWidget;
-export '/pages/create_game_step1/create_game_step1_widget.dart'
-    show CreateGameStep1Widget;
-export '/pages/create_game_step2/create_game_step2_widget.dart'
-    show CreateGameStep2Widget;
+export '/pages/settings/settings_widget.dart' show SettingsWidget;
+export '/pages/select_level/select_level_widget.dart' show SelectLevelWidget;
+export '/pages/earth_info/earth_info_widget.dart' show EarthInfoWidget;
 export '/pages/game_page/game_page_widget.dart' show GamePageWidget;
 export '/pages/login3/login3_widget.dart' show Login3Widget;
-export '/pages/create_account1/create_account1_widget.dart'
-    show CreateAccount1Widget;
-export '/pages/game_page_copy/game_page_copy_widget.dart'
-    show GamePageCopyWidget;
+export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;
+export '/pages/quiz1/quiz1_widget.dart' show Quiz1Widget;
+export '/pages/quiz2/quiz2_widget.dart' show Quiz2Widget;
+export '/pages/quiz3/quiz3_widget.dart' show Quiz3Widget;
+export '/pages/quiz4/quiz4_widget.dart' show Quiz4Widget;
+export '/pages/congrats_page/congrats_page_widget.dart' show CongratsPageWidget;

@@ -118,7 +118,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('OnboardingPage');
+                                    context.pushNamed('enterName');
                                   },
                                   child: Icon(
                                     Icons.edit_outlined,
@@ -165,7 +165,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               }, gamesRecordReference);
 
                               context.pushNamed(
-                                'CreateGameStep1',
+                                'selectLevel',
                                 queryParameters: {
                                   'gameRecord': serializeParam(
                                     _model.createdGame,
@@ -215,7 +215,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                           child: FFButtonWidget(
                             onPressed: () async {
                               context.pushNamed(
-                                'JoinGame',
+                                'settings',
                                 queryParameters: {
                                   'gameCode': serializeParam(
                                     0,

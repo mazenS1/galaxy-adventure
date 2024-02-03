@@ -14,19 +14,19 @@ import 'package:flutterflow_colorpicker/flutterflow_colorpicker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'game_page_copy_model.dart';
-export 'game_page_copy_model.dart';
+import 'quiz2_model.dart';
+export 'quiz2_model.dart';
 
-class GamePageCopyWidget extends StatefulWidget {
-  const GamePageCopyWidget({super.key});
+class Quiz2Widget extends StatefulWidget {
+  const Quiz2Widget({super.key});
 
   @override
-  State<GamePageCopyWidget> createState() => _GamePageCopyWidgetState();
+  State<Quiz2Widget> createState() => _Quiz2WidgetState();
 }
 
-class _GamePageCopyWidgetState extends State<GamePageCopyWidget>
+class _Quiz2WidgetState extends State<Quiz2Widget>
     with TickerProviderStateMixin {
-  late GamePageCopyModel _model;
+  late Quiz2Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -154,7 +154,7 @@ class _GamePageCopyWidgetState extends State<GamePageCopyWidget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => GamePageCopyModel());
+    _model = createModel(context, () => Quiz2Model());
 
     setupAnimations(
       animationsMap.values.where((anim) =>
@@ -403,7 +403,7 @@ class _GamePageCopyWidgetState extends State<GamePageCopyWidget>
                                                 alignment: AlignmentDirectional(
                                                     0.0, -1.0),
                                                 child: Text(
-                                                  'How old is our planet?',
+                                                  'How many planets are between earth and the sun?',
                                                   textAlign: TextAlign.center,
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -433,8 +433,8 @@ class _GamePageCopyWidgetState extends State<GamePageCopyWidget>
                                                               8.0),
                                                       child: Image.asset(
                                                         'assets/images/3703673003.gif',
-                                                        width: 200.0,
-                                                        height: 200.0,
+                                                        width: 180.0,
+                                                        height: 180.0,
                                                         fit: BoxFit.cover,
                                                       ),
                                                     ),
@@ -593,7 +593,7 @@ class _GamePageCopyWidgetState extends State<GamePageCopyWidget>
                                                             });
                                                           }
                                                         },
-                                                        text: '10 years',
+                                                        text: 'none',
                                                         options:
                                                             FFButtonOptions(
                                                           width: 120.0,
@@ -736,8 +736,7 @@ class _GamePageCopyWidgetState extends State<GamePageCopyWidget>
                                                               });
                                                             }
                                                           },
-                                                          text:
-                                                              '4.942 billion years ',
+                                                          text: '6',
                                                           options:
                                                               FFButtonOptions(
                                                             width: 120.0,
@@ -838,8 +837,7 @@ class _GamePageCopyWidgetState extends State<GamePageCopyWidget>
                                                                     from: 0.0);
                                                           }
                                                         },
-                                                        text:
-                                                            '4.543 billion years ',
+                                                        text: '2',
                                                         options:
                                                             FFButtonOptions(
                                                           width: 120.0,
@@ -977,8 +975,7 @@ class _GamePageCopyWidgetState extends State<GamePageCopyWidget>
                                                             });
                                                           }
                                                         },
-                                                        text:
-                                                            '100million years ',
+                                                        text: '3',
                                                         options:
                                                             FFButtonOptions(
                                                           width: 120.0,

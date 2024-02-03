@@ -3,7 +3,7 @@ import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'onboarding_page_widget.dart' show OnboardingPageWidget;
+import 'enter_name_widget.dart' show EnterNameWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,7 +11,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
-class OnboardingPageModel extends FlutterFlowModel<OnboardingPageWidget> {
+class EnterNameModel extends FlutterFlowModel<EnterNameWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TextField widget.

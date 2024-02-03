@@ -9,25 +9,25 @@ import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'onboarding_page_model.dart';
-export 'onboarding_page_model.dart';
+import 'enter_name_model.dart';
+export 'enter_name_model.dart';
 
-class OnboardingPageWidget extends StatefulWidget {
-  const OnboardingPageWidget({super.key});
+class EnterNameWidget extends StatefulWidget {
+  const EnterNameWidget({super.key});
 
   @override
-  State<OnboardingPageWidget> createState() => _OnboardingPageWidgetState();
+  State<EnterNameWidget> createState() => _EnterNameWidgetState();
 }
 
-class _OnboardingPageWidgetState extends State<OnboardingPageWidget> {
-  late OnboardingPageModel _model;
+class _EnterNameWidgetState extends State<EnterNameWidget> {
+  late EnterNameModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => OnboardingPageModel());
+    _model = createModel(context, () => EnterNameModel());
 
     _model.textController ??=
         TextEditingController(text: currentUserDisplayName);
