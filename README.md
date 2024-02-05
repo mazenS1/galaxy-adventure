@@ -1,7 +1,9 @@
-# realGame
+# Welcome To Our Game!
 
-A new Flutter project.
+## The game is about learing things about our universe!
 
-## Getting Started
+#### First lets get you started by running the game on your machine
 
-FlutterFlow projects are built to run on the Flutter _stable_ release.
+To do this please install futter by going to https://flutter.dev/ 
+
+After That you will need to clone the repo
