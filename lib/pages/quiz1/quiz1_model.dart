@@ -11,18 +11,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
-import 'package:flutterflow_colorpicker/flutterflow_colorpicker.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
 
 class Quiz1Model extends FlutterFlowModel<Quiz1Widget> {
-  ///  State fields for stateful widgets in this page.
-
-  Color? colorPicked1;
-  Color? colorPicked2;
-  Color? colorPicked3;
-
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}

@@ -31,10 +31,22 @@ class GameScoresRecord extends FirestoreRecord {
   int get score => _score ?? 0;
   bool hasScore() => _score != null;
 
+  // "levelWonName" field.
+  String? _levelWonName;
+  String get levelWonName => _levelWonName ?? '';
+  bool hasLevelWonName() => _levelWonName != null;
+
+  // "levelsWon" field.
+  int? _levelsWon;
+  int get levelsWon => _levelsWon ?? 0;
+  bool hasLevelsWon() => _levelsWon != null;
+
   void _initializeFields() {
     _user = snapshotData['user'] as DocumentReference?;
     _game = snapshotData['game'] as DocumentReference?;
     _score = castToType<int>(snapshotData['score']);
+    _levelWonName = snapshotData['levelWonName'] as String?;
+    _levelsWon = castToType<int>(snapshotData['levelsWon']);
   }
 
   static CollectionReference get collection =>
@@ -75,12 +87,16 @@ Map<String, dynamic> createGameScoresRecordData({
   DocumentReference? user,
   DocumentReference? game,
   int? score,
+  String? levelWonName,
+  int? levelsWon,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
       'user': user,
       'game': game,
       'score': score,
+      'levelWonName': levelWonName,
+      'levelsWon': levelsWon,
     }.withoutNulls,
   );
 
@@ -94,12 +110,14 @@ class GameScoresRecordDocumentEquality implements Equality<GameScoresRecord> {
   bool equals(GameScoresRecord? e1, GameScoresRecord? e2) {
     return e1?.user == e2?.user &&
         e1?.game == e2?.game &&
-        e1?.score == e2?.score;
+        e1?.score == e2?.score &&
+        e1?.levelWonName == e2?.levelWonName &&
+        e1?.levelsWon == e2?.levelsWon;
   }
 
   @override
-  int hash(GameScoresRecord? e) =>
-      const ListEquality().hash([e?.user, e?.game, e?.score]);
+  int hash(GameScoresRecord? e) => const ListEquality()
+      .hash([e?.user, e?.game, e?.score, e?.levelWonName, e?.levelsWon]);
 
   @override
   bool isValidKey(Object? o) => o is GameScoresRecord;

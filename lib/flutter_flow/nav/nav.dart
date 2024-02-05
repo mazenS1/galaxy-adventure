@@ -103,13 +103,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => HomePageWidget(),
         ),
         FFRoute(
-          name: 'settings',
-          path: '/settings',
-          builder: (context, params) => SettingsWidget(
-            gameCode: params.getParam('gameCode', ParamType.int),
-          ),
-        ),
-        FFRoute(
           name: 'selectLevel',
           path: '/selectLevel',
           asyncParams: {
@@ -128,14 +121,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           },
           builder: (context, params) => EarthInfoWidget(
             gameRecord: params.getParam('gameRecord', ParamType.Document),
-          ),
-        ),
-        FFRoute(
-          name: 'GamePage',
-          path: '/gamePage',
-          builder: (context, params) => GamePageWidget(
-            gameRef: params.getParam(
-                'gameRef', ParamType.DocumentReference, false, ['games']),
           ),
         ),
         FFRoute(
@@ -172,9 +157,18 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'congratsPage',
           path: '/congratsPage',
           builder: (context, params) => CongratsPageWidget(),
+        ),
+        FFRoute(
+          name: 'scorePage',
+          path: '/scorePage',
+          builder: (context, params) => ScorePageWidget(),
+        ),
+        FFRoute(
+          name: 'settings',
+          path: '/settings',
+          builder: (context, params) => SettingsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
-      observers: [routeObserver],
     );
 
 extension NavParamExtensions on Map<String, String?> {

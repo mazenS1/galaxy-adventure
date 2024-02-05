@@ -81,87 +81,91 @@ class _CongratsPageWidgetState extends State<CongratsPageWidget>
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
-      body: Stack(
-        children: [
-          Stack(
-            children: [
-              Lottie.asset(
-                'assets/lottie_animations/Animation_-_1706560713375.json',
-                width: 535.0,
-                height: 881.0,
-                fit: BoxFit.cover,
-                animate: true,
-              ),
-            ],
-          ),
-          Container(
-            width: MediaQuery.sizeOf(context).width * 1.0,
-            height: MediaQuery.sizeOf(context).height * 1.0,
-            decoration: BoxDecoration(
-              color: Color(0x00EEEEEE),
-            ),
-            alignment: AlignmentDirectional(0.0, 0.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
+      body: SafeArea(
+        top: true,
+        child: Stack(
+          children: [
+            Stack(
               children: [
-                Align(
-                  alignment: AlignmentDirectional(0.0, -1.0),
-                  child: Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
-                    child: Text(
-                      'Explore The Universe!!',
-                      textAlign: TextAlign.center,
-                      style:
-                          FlutterFlowTheme.of(context).displayMedium.override(
-                                fontFamily: 'Readex Pro',
-                                color: FlutterFlowTheme.of(context).primary,
-                              ),
-                    ),
-                  ),
-                ),
                 Lottie.asset(
-                  'assets/lottie_animations/Animation_-_1706554681211.json',
-                  width: 150.0,
-                  height: 130.0,
+                  'assets/lottie_animations/Animation_-_1706560713375.json',
+                  width: 1000.0,
+                  height: 881.0,
                   fit: BoxFit.cover,
                   animate: true,
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
-                  child: FFButtonWidget(
-                    onPressed: () async {
-                      context.pushNamed('Login3');
-                    },
-                    text: 'Get Started',
-                    options: FFButtonOptions(
-                      width: 270.0,
-                      height: 70.0,
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      iconPadding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                      color: FlutterFlowTheme.of(context).secondary,
-                      textStyle:
-                          FlutterFlowTheme.of(context).displaySmall.override(
-                                fontFamily: 'Readex Pro',
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.w500,
-                              ),
-                      elevation: 4.0,
-                      borderSide: BorderSide(
-                        color: Colors.transparent,
-                        width: 1.0,
-                      ),
-                      borderRadius: BorderRadius.circular(16.0),
-                    ),
-                  ),
-                ),
               ],
             ),
-          ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
-        ],
+            Container(
+              width: MediaQuery.sizeOf(context).width * 1.0,
+              height: MediaQuery.sizeOf(context).height * 1.0,
+              decoration: BoxDecoration(
+                color: Color(0x00EEEEEE),
+              ),
+              alignment: AlignmentDirectional(0.0, 0.0),
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Align(
+                    alignment: AlignmentDirectional(0.0, -1.0),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
+                      child: Text(
+                        'CONGRATS YOU FINISHED THE LEVEL!!!',
+                        textAlign: TextAlign.center,
+                        style:
+                            FlutterFlowTheme.of(context).displayMedium.override(
+                                  fontFamily: 'Readex Pro',
+                                  color: FlutterFlowTheme.of(context).primary,
+                                ),
+                      ),
+                    ),
+                  ),
+                  Lottie.asset(
+                    'assets/lottie_animations/Animation_-_1706554681211.json',
+                    width: 150.0,
+                    height: 130.0,
+                    fit: BoxFit.cover,
+                    animate: true,
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 0.0),
+                    child: FFButtonWidget(
+                      onPressed: () async {
+                        context.pushNamed('HomePage');
+                      },
+                      text: 'Click here to contiue ',
+                      options: FFButtonOptions(
+                        width: 270.0,
+                        height: 70.0,
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        iconPadding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        color: FlutterFlowTheme.of(context).secondary,
+                        textStyle:
+                            FlutterFlowTheme.of(context).displaySmall.override(
+                                  fontFamily: 'Readex Pro',
+                                  fontSize: 20.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                        elevation: 4.0,
+                        borderSide: BorderSide(
+                          color: Colors.transparent,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(16.0),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ).animateOnPageLoad(animationsMap['containerOnPageLoadAnimation']!),
+          ],
+        ),
       ),
     );
   }
