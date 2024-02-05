@@ -25,6 +25,9 @@ flutter run
 students woriking on the project:
 
 Osama Almalik	
-Nawaf Alduaij		
-Mazen Abdullatif	
+
+Nawaf Alduaij	
+
+Mazen Abdullatif
+
 Fahad Al-Hussein
