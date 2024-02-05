@@ -202,7 +202,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                   text: TextSpan(
                                     children: [
                                       TextSpan(
-                                        text: 'YOU LEARNED ABOUT :',
+                                        text: 'YOU LEARNED ABOUT :   ',
                                         style: TextStyle(),
                                       ),
                                       TextSpan(
@@ -230,6 +230,39 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                         ),
                                   ),
                                   textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 80.0, 0.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  context.pushNamed('HomePage');
+                                },
+                                text: 'Back ',
+                                options: FFButtonOptions(
+                                  width: 200.0,
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).secondary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        color: Colors.white,
+                                        fontSize: 20.0,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                  elevation: 4.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                               ),
                             ),

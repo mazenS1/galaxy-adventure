@@ -425,7 +425,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         mouseCursor: SystemMouseCursors.click,
                                         recognizer: TapGestureRecognizer()
                                           ..onTap = () async {
-                                            context.pushNamed('null');
+                                            context.pushNamed('Login3');
                                           },
                                       )
                                     ],

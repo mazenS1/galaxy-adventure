@@ -216,7 +216,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 0.0, 15.0, 0.0, 0.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                context.pushNamed('null');
+                                context.pushNamed('settings');
                               },
                               text: 'Game Settings',
                               options: FFButtonOptions(
