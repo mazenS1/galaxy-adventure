@@ -215,6 +215,45 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 ),
                               ),
                             ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    15.0, 0.0, 0.0, 170.0),
+                                child: Switch.adaptive(
+                                  value: _model.switchValue ??= true,
+                                  onChanged: (newValue) async {
+                                    setState(
+                                        () => _model.switchValue = newValue!);
+                                    if (newValue!) {
+                                      setDarkModeSetting(
+                                          context, ThemeMode.dark);
+                                    }
+                                  },
+                                  activeColor:
+                                      FlutterFlowTheme.of(context).primary,
+                                  activeTrackColor:
+                                      FlutterFlowTheme.of(context).accent1,
+                                  inactiveTrackColor:
+                                      FlutterFlowTheme.of(context).alternate,
+                                  inactiveThumbColor:
+                                      FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                ),
+                              ),
+                            ),
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 200.0, 170.0),
+                                child: Text(
+                                  'Toggle Light Mode',
+                                  style:
+                                      FlutterFlowTheme.of(context).titleSmall,
+                                ),
+                              ),
+                            ),
                           ],
                         ),
                       ),

@@ -18,6 +18,8 @@ class SettingsModel extends FlutterFlowModel<SettingsWidget> {
   FocusNode? nameFocusNode;
   TextEditingController? nameController;
   String? Function(BuildContext, String?)? nameControllerValidator;
+  // State field(s) for Switch widget.
+  bool? switchValue;
   // State field(s) for Email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailController;
