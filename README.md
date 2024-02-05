@@ -17,7 +17,7 @@ We are nearly there! Aftere this you will need to run the following commande ***
 ```bash
 flutter pub get
 ```
-Now you should be all set to run the game on your machine! run the following commande in the main.dart file:
+Now you should be all set to run the game on your machine! run the following commande in the ***main.dart*** file:
 ```bash
 flutter run
 ```
