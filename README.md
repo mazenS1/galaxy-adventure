@@ -21,3 +21,10 @@ Now you should be all set to run the game on your machine! run the following com
 ```bash
 flutter run
 ```
+
+students woriking on the project:
+
+Osama Almalik	
+Nawaf Alduaij		
+Mazen Abdullatif	
+Fahad Al-Hussein
