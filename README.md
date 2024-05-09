@@ -3,6 +3,7 @@
 ## The game is about learing things about our universe!
 
 #### First lets get you started by running the game on your machine
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Plubu_galaxy-adventure&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Plubu_galaxy-adventure)
 
 To do this please install futter by going to [Flutter.dev](https://flutter.dev/) and follow the instructions there
 
