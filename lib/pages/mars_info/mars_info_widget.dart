@@ -212,7 +212,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'Mars day is slightly longer than Earth`s day',
+                                        'Mars day is slightly longer than Earth`s day (37 min)',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
