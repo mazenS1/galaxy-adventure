@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -43,15 +42,6 @@ class _EnterNameWidgetState extends State<EnterNameWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -97,6 +87,7 @@ class _EnterNameWidgetState extends State<EnterNameWidget> {
                                         fontFamily: 'Readex Pro',
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
+                                        letterSpacing: 0.0,
                                       ),
                                 ),
                               ),
@@ -116,6 +107,7 @@ class _EnterNameWidgetState extends State<EnterNameWidget> {
                                             fontFamily: 'Inter',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
+                                            letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -158,6 +150,7 @@ class _EnterNameWidgetState extends State<EnterNameWidget> {
                                           fontFamily: 'Inter',
                                           color: FlutterFlowTheme.of(context)
                                               .tertiary,
+                                          letterSpacing: 0.0,
                                         ),
                                     cursorColor:
                                         FlutterFlowTheme.of(context).accent2,
@@ -194,6 +187,7 @@ class _EnterNameWidgetState extends State<EnterNameWidget> {
                                           fontFamily: 'Inter',
                                           color: Colors.white,
                                           fontSize: 20.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.w600,
                                         ),
                                     elevation: 4.0,

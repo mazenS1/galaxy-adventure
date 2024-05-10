@@ -6,7 +6,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -40,15 +39,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -89,7 +79,12 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                 0.0, 15.0, 0.0, 0.0),
                             child: Text(
                               'Welcome!',
-                              style: FlutterFlowTheme.of(context).displaySmall,
+                              style: FlutterFlowTheme.of(context)
+                                  .displaySmall
+                                  .override(
+                                    fontFamily: 'Readex Pro',
+                                    letterSpacing: 0.0,
+                                  ),
                             ),
                           ),
                           Padding(
@@ -108,6 +103,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           fontSize: 27.0,
+                                          letterSpacing: 0.0,
                                         ),
                                   ),
                                 ),
@@ -200,6 +196,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       fontFamily: 'Inter',
                                       color: Colors.white,
                                       fontSize: 20.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                     ),
                                 elevation: 4.0,
@@ -233,6 +230,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       fontFamily: 'Inter',
                                       color: Colors.white,
                                       fontSize: 20.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                     ),
                                 elevation: 4.0,
@@ -266,6 +264,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       fontFamily: 'Inter',
                                       color: Colors.white,
                                       fontSize: 20.0,
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w600,
                                     ),
                                 elevation: 4.0,

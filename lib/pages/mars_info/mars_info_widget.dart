@@ -8,11 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'earth_info_model.dart';
-export 'earth_info_model.dart';
+import 'mars_info_model.dart';
+export 'mars_info_model.dart';
 
-class EarthInfoWidget extends StatefulWidget {
-  const EarthInfoWidget({
+class MarsInfoWidget extends StatefulWidget {
+  const MarsInfoWidget({
     super.key,
     this.gameRecord,
   });
@@ -20,18 +20,18 @@ class EarthInfoWidget extends StatefulWidget {
   final GamesRecord? gameRecord;
 
   @override
-  State<EarthInfoWidget> createState() => _EarthInfoWidgetState();
+  State<MarsInfoWidget> createState() => _MarsInfoWidgetState();
 }
 
-class _EarthInfoWidgetState extends State<EarthInfoWidget> {
-  late EarthInfoModel _model;
+class _MarsInfoWidgetState extends State<MarsInfoWidget> {
+  late MarsInfoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => EarthInfoModel());
+    _model = createModel(context, () => MarsInfoModel());
   }
 
   @override
@@ -109,7 +109,7 @@ class _EarthInfoWidgetState extends State<EarthInfoWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'Earth!',
+                                        'Mars',
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
@@ -130,7 +130,7 @@ class _EarthInfoWidgetState extends State<EarthInfoWidget> {
                                         alignment:
                                             AlignmentDirectional(0.0, -1.0),
                                         child: Text(
-                                          'Our First Step To Learn About The Universe',
+                                          'The dry eartrh',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -154,7 +154,7 @@ class _EarthInfoWidgetState extends State<EarthInfoWidget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: Image.asset(
-                                            'assets/images/3703673003.gif',
+                                            'assets/images/630133522.gif',
                                             width: 200.0,
                                             height: 200.0,
                                             fit: BoxFit.cover,
@@ -168,7 +168,7 @@ class _EarthInfoWidgetState extends State<EarthInfoWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
-                                    ' Some Facts About Earth!',
+                                    'Mars Facts!',
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
@@ -199,7 +199,7 @@ class _EarthInfoWidgetState extends State<EarthInfoWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'Earth is 4.543 billion years old!',
+                                        'It is nicknamed the Red Planet',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -212,7 +212,7 @@ class _EarthInfoWidgetState extends State<EarthInfoWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'Earth rotates at around 1000 miles an hour',
+                                        'Mars day is slightly longer than Earth`s day',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -225,7 +225,7 @@ class _EarthInfoWidgetState extends State<EarthInfoWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'It is the only planet we have found that contains life!',
+                                        'Mars is home to the largest volcano in the solar system, Olympus Mons.',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -247,33 +247,11 @@ class _EarthInfoWidgetState extends State<EarthInfoWidget> {
                                             ),
                                       ),
                                     ),
-                                    Container(
-                                      width: 50.0,
-                                      height: 100.0,
-                                      decoration: BoxDecoration(
-                                        color: Color(0x00151820),
-                                      ),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 5.0, 0.0, 0.0),
-                                        child: ClipRRect(
-                                          borderRadius:
-                                              BorderRadius.circular(8.0),
-                                          child: Image.asset(
-                                            'assets/images/1155916463.gif',
-                                            width: 50.0,
-                                            height: 100.0,
-                                            fit: BoxFit.contain,
-                                            alignment: Alignment(0.0, 0.0),
-                                          ),
-                                        ),
-                                      ),
-                                    ),
                                   ],
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
+                                      0.0, 50.0, 0.0, 0.0),
                                   child: FFButtonWidget(
                                     onPressed: () async {
                                       await GameScoresRecord.collection

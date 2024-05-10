@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -29,13 +28,13 @@ class _SettingsWidgetState extends State<SettingsWidget> {
     super.initState();
     _model = createModel(context, () => SettingsModel());
 
-    _model.nameController ??= TextEditingController(text: '\n');
+    _model.nameTextController ??= TextEditingController(text: '\n');
     _model.nameFocusNode ??= FocusNode();
 
-    _model.emailController ??= TextEditingController(text: '\n');
+    _model.emailTextController ??= TextEditingController(text: '\n');
     _model.emailFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController(text: '\n');
+    _model.passwordTextController ??= TextEditingController(text: '\n');
     _model.passwordFocusNode ??= FocusNode();
   }
 
@@ -48,15 +47,6 @@ class _SettingsWidgetState extends State<SettingsWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -103,6 +93,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         fontSize: 30.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.bold,
                                       ),
                                 ),
@@ -116,7 +107,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 child: Container(
                                   width: 300.0,
                                   child: TextFormField(
-                                    controller: _model.nameController,
+                                    controller: _model.nameTextController,
                                     focusNode: _model.nameFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -127,6 +118,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             fontFamily: 'Inter',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
+                                            letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -169,11 +161,13 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           fontFamily: 'Inter',
                                           color: FlutterFlowTheme.of(context)
                                               .tertiary,
+                                          letterSpacing: 0.0,
                                         ),
                                     textAlign: TextAlign.start,
                                     cursorColor:
                                         FlutterFlowTheme.of(context).accent2,
-                                    validator: _model.nameControllerValidator
+                                    validator: _model
+                                        .nameTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -186,7 +180,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 onPressed: () async {
                                   await currentUserReference!
                                       .update(createUsersRecordData(
-                                    displayName: _model.nameController.text,
+                                    displayName: _model.nameTextController.text,
                                   ));
                                 },
                                 text: 'Change Name',
@@ -204,6 +198,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         fontFamily: 'Inter',
                                         color: Colors.white,
                                         fontSize: 20.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                   elevation: 4.0,
@@ -212,45 +207,6 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     width: 1.0,
                                   ),
                                   borderRadius: BorderRadius.circular(16.0),
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    15.0, 0.0, 0.0, 170.0),
-                                child: Switch.adaptive(
-                                  value: _model.switchValue ??= true,
-                                  onChanged: (newValue) async {
-                                    setState(
-                                        () => _model.switchValue = newValue!);
-                                    if (newValue!) {
-                                      setDarkModeSetting(
-                                          context, ThemeMode.dark);
-                                    }
-                                  },
-                                  activeColor:
-                                      FlutterFlowTheme.of(context).primary,
-                                  activeTrackColor:
-                                      FlutterFlowTheme.of(context).accent1,
-                                  inactiveTrackColor:
-                                      FlutterFlowTheme.of(context).alternate,
-                                  inactiveThumbColor:
-                                      FlutterFlowTheme.of(context)
-                                          .secondaryText,
-                                ),
-                              ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 200.0, 170.0),
-                                child: Text(
-                                  'Toggle Light Mode',
-                                  style:
-                                      FlutterFlowTheme.of(context).titleSmall,
                                 ),
                               ),
                             ),
@@ -273,7 +229,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 child: Container(
                                   width: 300.0,
                                   child: TextFormField(
-                                    controller: _model.emailController,
+                                    controller: _model.emailTextController,
                                     focusNode: _model.emailFocusNode,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -284,6 +240,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             fontFamily: 'Inter',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
+                                            letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -326,11 +283,13 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           fontFamily: 'Inter',
                                           color: FlutterFlowTheme.of(context)
                                               .tertiary,
+                                          letterSpacing: 0.0,
                                         ),
                                     textAlign: TextAlign.start,
                                     cursorColor:
                                         FlutterFlowTheme.of(context).accent2,
-                                    validator: _model.emailControllerValidator
+                                    validator: _model
+                                        .emailTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -344,7 +303,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                 child: Container(
                                   width: 300.0,
                                   child: TextFormField(
-                                    controller: _model.passwordController,
+                                    controller: _model.passwordTextController,
                                     focusNode: _model.passwordFocusNode,
                                     obscureText: !_model.passwordVisibility,
                                     decoration: InputDecoration(
@@ -355,6 +314,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                             fontFamily: 'Inter',
                                             color: FlutterFlowTheme.of(context)
                                                 .primaryText,
+                                            letterSpacing: 0.0,
                                           ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
@@ -412,11 +372,12 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                           fontFamily: 'Inter',
                                           color: FlutterFlowTheme.of(context)
                                               .tertiary,
+                                          letterSpacing: 0.0,
                                         ),
                                     cursorColor:
                                         FlutterFlowTheme.of(context).accent2,
                                     validator: _model
-                                        .passwordControllerValidator
+                                        .passwordTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -427,7 +388,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   90.0, 170.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  if (_model.emailController.text.isEmpty) {
+                                  if (_model.emailTextController.text.isEmpty) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
@@ -439,7 +400,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   }
 
                                   await authManager.updateEmail(
-                                    email: _model.emailController.text,
+                                    email: _model.emailTextController.text,
                                     context: context,
                                   );
                                   setState(() {});
@@ -459,6 +420,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         fontFamily: 'Inter',
                                         color: Colors.white,
                                         fontSize: 20.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                   elevation: 4.0,
@@ -475,7 +437,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                   90.0, 360.0, 0.0, 0.0),
                               child: FFButtonWidget(
                                 onPressed: () async {
-                                  if (_model.emailController.text.isEmpty) {
+                                  if (_model.emailTextController.text.isEmpty) {
                                     ScaffoldMessenger.of(context).showSnackBar(
                                       SnackBar(
                                         content: Text(
@@ -486,7 +448,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                     return;
                                   }
                                   await authManager.resetPassword(
-                                    email: _model.emailController.text,
+                                    email: _model.emailTextController.text,
                                     context: context,
                                   );
                                   await showDialog(
@@ -522,6 +484,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         fontFamily: 'Inter',
                                         color: Colors.white,
                                         fontSize: 20.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                   elevation: 4.0,
@@ -555,6 +518,7 @@ class _SettingsWidgetState extends State<SettingsWidget> {
                                         fontFamily: 'Inter',
                                         color: Colors.white,
                                         fontSize: 20.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                   elevation: 4.0,

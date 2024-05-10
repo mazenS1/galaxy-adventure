@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -45,15 +44,6 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -141,7 +131,11 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                   child: Text(
                                     'Lets Play!',
                                     style: FlutterFlowTheme.of(context)
-                                        .displaySmall,
+                                        .displaySmall
+                                        .override(
+                                          fontFamily: 'Readex Pro',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                                 Padding(
@@ -149,8 +143,12 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
                                     'Select Level',
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                                 Padding(
@@ -185,6 +183,7 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                                       fontFamily: 'Inter',
                                                       color: Colors.white,
                                                       fontSize: 20.0,
+                                                      letterSpacing: 0.0,
                                                       fontWeight:
                                                           FontWeight.w600,
                                                     ),
@@ -254,6 +253,7 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                                         fontFamily: 'Inter',
                                                         color: Colors.white,
                                                         fontSize: 20.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
@@ -324,6 +324,7 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                                         fontFamily: 'Inter',
                                                         color: Colors.white,
                                                         fontSize: 20.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
@@ -394,6 +395,7 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                                         fontFamily: 'Inter',
                                                         color: Colors.white,
                                                         fontSize: 20.0,
+                                                        letterSpacing: 0.0,
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
@@ -455,6 +457,7 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                             fontFamily: 'Inter',
                                             color: Color(0x00FFFFFF),
                                             fontSize: 20.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w100,
                                           ),
                                       elevation: 4.0,
@@ -500,6 +503,7 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                             fontFamily: 'Inter',
                                             color: Color(0x00FFFFFF),
                                             fontSize: 20.0,
+                                            letterSpacing: 0.0,
                                             fontWeight: FontWeight.w600,
                                           ),
                                       elevation: 4.0,

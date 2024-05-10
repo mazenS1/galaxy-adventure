@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -38,15 +37,6 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFFF5F5F5),
@@ -104,8 +94,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             RichText(
-                              textScaleFactor:
-                                  MediaQuery.of(context).textScaleFactor,
+                              textScaler: MediaQuery.of(context).textScaler,
                               text: TextSpan(
                                 children: [
                                   TextSpan(
@@ -140,6 +129,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Inter',
+                                      letterSpacing: 0.0,
                                       fontWeight: FontWeight.w800,
                                     ),
                               ),
@@ -149,8 +139,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 100.0, 0.0, 0.0),
                               child: RichText(
-                                textScaleFactor:
-                                    MediaQuery.of(context).textScaleFactor,
+                                textScaler: MediaQuery.of(context).textScaler,
                                 text: TextSpan(
                                   children: [
                                     TextSpan(
@@ -185,6 +174,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                       .override(
                                         fontFamily: 'Inter',
                                         fontSize: 24.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w800,
                                       ),
                                 ),
@@ -197,8 +187,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 100.0, 0.0, 0.0),
                                 child: RichText(
-                                  textScaleFactor:
-                                      MediaQuery.of(context).textScaleFactor,
+                                  textScaler: MediaQuery.of(context).textScaler,
                                   text: TextSpan(
                                     children: [
                                       TextSpan(
@@ -226,6 +215,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                         .override(
                                           fontFamily: 'Inter',
                                           fontSize: 25.0,
+                                          letterSpacing: 0.0,
                                           fontWeight: FontWeight.w800,
                                         ),
                                   ),
@@ -255,6 +245,7 @@ class _ScorePageWidgetState extends State<ScorePageWidget> {
                                         fontFamily: 'Inter',
                                         color: Colors.white,
                                         fontSize: 20.0,
+                                        letterSpacing: 0.0,
                                         fontWeight: FontWeight.w600,
                                       ),
                                   elevation: 4.0,

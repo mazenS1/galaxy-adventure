@@ -293,9 +293,13 @@ class FirebaseAuthManager extends AuthManager
           ? null
           : RealGameFirebaseUser.fromUserCredential(userCredential);
     } on FirebaseAuthException catch (e) {
-      final errorMsg = e.message?.contains('auth/email-already-in-use') ?? false
-          ? 'The email is already in use by a different account'
-          : 'Error: ${e.message!}';
+      final errorMsg = switch (e.code) {
+        'email-already-in-use' =>
+          'Error: The email is already in use by a different account',
+        'INVALID_LOGIN_CREDENTIALS' =>
+          'Error: The supplied auth credential is incorrect, malformed or has expired',
+        _ => 'Error: ${e.message!}',
+      };
       ScaffoldMessenger.of(context).hideCurrentSnackBar();
       ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(errorMsg)),

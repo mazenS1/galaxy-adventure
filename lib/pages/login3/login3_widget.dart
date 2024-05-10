@@ -3,10 +3,10 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'dart:math';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
@@ -27,53 +27,55 @@ class _Login3WidgetState extends State<Login3Widget>
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
-  final animationsMap = {
-    'containerOnPageLoadAnimation': AnimationInfo(
-      trigger: AnimationTrigger.onPageLoad,
-      effects: [
-        VisibilityEffect(duration: 1.ms),
-        FadeEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: 0.0,
-          end: 1.0,
-        ),
-        MoveEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: Offset(0.0, 140.0),
-          end: Offset(0.0, 0.0),
-        ),
-        ScaleEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: Offset(0.9, 0.9),
-          end: Offset(1.0, 1.0),
-        ),
-        TiltEffect(
-          curve: Curves.easeInOut,
-          delay: 0.ms,
-          duration: 300.ms,
-          begin: Offset(-0.349, 0),
-          end: Offset(0, 0),
-        ),
-      ],
-    ),
-  };
+  final animationsMap = <String, AnimationInfo>{};
 
   @override
   void initState() {
     super.initState();
     _model = createModel(context, () => Login3Model());
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
+
+    animationsMap.addAll({
+      'containerOnPageLoadAnimation': AnimationInfo(
+        trigger: AnimationTrigger.onPageLoad,
+        effectsBuilder: () => [
+          VisibilityEffect(duration: 1.ms),
+          FadeEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: 0.0,
+            end: 1.0,
+          ),
+          MoveEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(0.0, 140.0),
+            end: Offset(0.0, 0.0),
+          ),
+          ScaleEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(0.9, 0.9),
+            end: Offset(1.0, 1.0),
+          ),
+          TiltEffect(
+            curve: Curves.easeInOut,
+            delay: 0.0.ms,
+            duration: 300.0.ms,
+            begin: Offset(-0.349, 0),
+            end: Offset(0, 0),
+          ),
+        ],
+      ),
+    });
   }
 
   @override
@@ -85,15 +87,6 @@ class _Login3WidgetState extends State<Login3Widget>
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return GestureDetector(
       onTap: () => _model.unfocusNode.canRequestFocus
           ? FocusScope.of(context).requestFocus(_model.unfocusNode)
@@ -145,6 +138,7 @@ class _Login3WidgetState extends State<Login3Widget>
                                     fontFamily: 'Readex Pro',
                                     color: Colors.white,
                                     fontSize: 30.0,
+                                    letterSpacing: 0.0,
                                   ),
                             ),
                           ),
@@ -161,7 +155,10 @@ class _Login3WidgetState extends State<Login3Widget>
                                 BoxShadow(
                                   blurRadius: 4.0,
                                   color: Color(0x33000000),
-                                  offset: Offset(0.0, 2.0),
+                                  offset: Offset(
+                                    0.0,
+                                    2.0,
+                                  ),
                                 )
                               ],
                               gradient: LinearGradient(
@@ -188,7 +185,11 @@ class _Login3WidgetState extends State<Login3Widget>
                                       'Welcome Back',
                                       textAlign: TextAlign.center,
                                       style: FlutterFlowTheme.of(context)
-                                          .displaySmall,
+                                          .displaySmall
+                                          .override(
+                                            fontFamily: 'Readex Pro',
+                                            letterSpacing: 0.0,
+                                          ),
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
@@ -197,7 +198,11 @@ class _Login3WidgetState extends State<Login3Widget>
                                         'Fill out the information below in order to access your account.',
                                         textAlign: TextAlign.center,
                                         style: FlutterFlowTheme.of(context)
-                                            .labelMedium,
+                                            .labelMedium
+                                            .override(
+                                              fontFamily: 'Inter',
+                                              letterSpacing: 0.0,
+                                            ),
                                       ),
                                     ),
                                     Padding(
@@ -207,7 +212,7 @@ class _Login3WidgetState extends State<Login3Widget>
                                         width: double.infinity,
                                         child: TextFormField(
                                           controller:
-                                              _model.emailAddressController,
+                                              _model.emailAddressTextController,
                                           focusNode:
                                               _model.emailAddressFocusNode,
                                           autofocus: true,
@@ -217,7 +222,11 @@ class _Login3WidgetState extends State<Login3Widget>
                                             labelText: 'Email',
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelLarge,
+                                                    .labelLarge
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
@@ -265,11 +274,15 @@ class _Login3WidgetState extends State<Login3Widget>
                                                     .primaryBackground,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyLarge,
+                                              .bodyLarge
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                           keyboardType:
                                               TextInputType.emailAddress,
                                           validator: _model
-                                              .emailAddressControllerValidator
+                                              .emailAddressTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -280,7 +293,8 @@ class _Login3WidgetState extends State<Login3Widget>
                                       child: Container(
                                         width: double.infinity,
                                         child: TextFormField(
-                                          controller: _model.passwordController,
+                                          controller:
+                                              _model.passwordTextController,
                                           focusNode: _model.passwordFocusNode,
                                           autofocus: true,
                                           autofillHints: [
@@ -292,7 +306,11 @@ class _Login3WidgetState extends State<Login3Widget>
                                             labelText: 'Password',
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .labelLarge,
+                                                    .labelLarge
+                                                    .override(
+                                                      fontFamily: 'Inter',
+                                                      letterSpacing: 0.0,
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
@@ -359,9 +377,13 @@ class _Login3WidgetState extends State<Login3Widget>
                                             ),
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyLarge,
+                                              .bodyLarge
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                           validator: _model
-                                              .passwordControllerValidator
+                                              .passwordTextControllerValidator
                                               .asValidator(context),
                                         ),
                                       ),
@@ -377,8 +399,9 @@ class _Login3WidgetState extends State<Login3Widget>
                                           final user =
                                               await authManager.signInWithEmail(
                                             context,
-                                            _model.emailAddressController.text,
-                                            _model.passwordController.text,
+                                            _model.emailAddressTextController
+                                                .text,
+                                            _model.passwordTextController.text,
                                           );
                                           if (user == null) {
                                             return;
@@ -405,6 +428,7 @@ class _Login3WidgetState extends State<Login3Widget>
                                                   .override(
                                                     fontFamily: 'Inter',
                                                     color: Colors.white,
+                                                    letterSpacing: 0.0,
                                                   ),
                                           elevation: 3.0,
                                           borderSide: BorderSide(
@@ -422,8 +446,8 @@ class _Login3WidgetState extends State<Login3Widget>
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 12.0, 0.0, 12.0),
                                       child: RichText(
-                                        textScaleFactor: MediaQuery.of(context)
-                                            .textScaleFactor,
+                                        textScaler:
+                                            MediaQuery.of(context).textScaler,
                                         text: TextSpan(
                                           children: [
                                             TextSpan(
@@ -440,6 +464,7 @@ class _Login3WidgetState extends State<Login3Widget>
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .tertiary,
+                                                    letterSpacing: 0.0,
                                                     fontWeight: FontWeight.w600,
                                                   ),
                                               mouseCursor:
@@ -451,7 +476,11 @@ class _Login3WidgetState extends State<Login3Widget>
                                             )
                                           ],
                                           style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Inter',
+                                                letterSpacing: 0.0,
+                                              ),
                                         ),
                                       ),
                                     ),
