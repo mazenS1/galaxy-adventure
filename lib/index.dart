@@ -15,3 +15,4 @@ export '/pages/score_page/score_page_widget.dart' show ScorePageWidget;
 export '/pages/settings/settings_widget.dart' show SettingsWidget;
 export '/pages/mars_info/mars_info_widget.dart' show MarsInfoWidget;
 export '/pages/marsquiz1/marsquiz1_widget.dart' show Marsquiz1Widget;
+export '/pages/marquiz2/marquiz2_widget.dart' show Marquiz2Widget;
