@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'sign_up_widget.dart' show SignUpWidget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -15,38 +14,35 @@ class SignUpModel extends FlutterFlowModel<SignUpWidget> {
 
   // State field(s) for emailAddress widget.
   FocusNode? emailAddressFocusNode;
-  TextEditingController? emailAddressController;
-  String? Function(BuildContext, String?)? emailAddressControllerValidator;
+  TextEditingController? emailAddressTextController;
+  String? Function(BuildContext, String?)? emailAddressTextControllerValidator;
   // State field(s) for password widget.
   FocusNode? passwordFocusNode;
-  TextEditingController? passwordController;
+  TextEditingController? passwordTextController;
   late bool passwordVisibility;
-  String? Function(BuildContext, String?)? passwordControllerValidator;
+  String? Function(BuildContext, String?)? passwordTextControllerValidator;
   // State field(s) for passwordConfirm widget.
   FocusNode? passwordConfirmFocusNode;
-  TextEditingController? passwordConfirmController;
+  TextEditingController? passwordConfirmTextController;
   late bool passwordConfirmVisibility;
-  String? Function(BuildContext, String?)? passwordConfirmControllerValidator;
+  String? Function(BuildContext, String?)?
+      passwordConfirmTextControllerValidator;
 
-  /// Initialization and disposal methods.
-
+  @override
   void initState(BuildContext context) {
     passwordVisibility = false;
     passwordConfirmVisibility = false;
   }
 
+  @override
   void dispose() {
     emailAddressFocusNode?.dispose();
-    emailAddressController?.dispose();
+    emailAddressTextController?.dispose();
 
     passwordFocusNode?.dispose();
-    passwordController?.dispose();
+    passwordTextController?.dispose();
 
     passwordConfirmFocusNode?.dispose();
-    passwordConfirmController?.dispose();
+    passwordConfirmTextController?.dispose();
   }
-
-  /// Action blocks are added here.
-
-  /// Additional helper methods are added here.
 }

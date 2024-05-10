@@ -13,3 +13,4 @@ export '/pages/quiz4/quiz4_widget.dart' show Quiz4Widget;
 export '/pages/congrats_page/congrats_page_widget.dart' show CongratsPageWidget;
 export '/pages/score_page/score_page_widget.dart' show ScorePageWidget;
 export '/pages/settings/settings_widget.dart' show SettingsWidget;
+export '/pages/mars_info/mars_info_widget.dart' show MarsInfoWidget;

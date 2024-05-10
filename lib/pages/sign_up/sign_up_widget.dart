@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
@@ -28,13 +27,13 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     super.initState();
     _model = createModel(context, () => SignUpModel());
 
-    _model.emailAddressController ??= TextEditingController();
+    _model.emailAddressTextController ??= TextEditingController();
     _model.emailAddressFocusNode ??= FocusNode();
 
-    _model.passwordController ??= TextEditingController();
+    _model.passwordTextController ??= TextEditingController();
     _model.passwordFocusNode ??= FocusNode();
 
-    _model.passwordConfirmController ??= TextEditingController();
+    _model.passwordConfirmTextController ??= TextEditingController();
     _model.passwordConfirmFocusNode ??= FocusNode();
   }
 
@@ -47,15 +46,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (isiOS) {
-      SystemChrome.setSystemUIOverlayStyle(
-        SystemUiOverlayStyle(
-          statusBarBrightness: Theme.of(context).brightness,
-          systemStatusBarContrastEnforced: true,
-        ),
-      );
-    }
-
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -92,16 +82,24 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             children: [
                               Text(
                                 'Create an account',
-                                style:
-                                    FlutterFlowTheme.of(context).displaySmall,
+                                style: FlutterFlowTheme.of(context)
+                                    .displaySmall
+                                    .override(
+                                      fontFamily: 'Readex Pro',
+                                      letterSpacing: 0.0,
+                                    ),
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 24.0),
                                 child: Text(
                                   'Let\'s get started by filling out the form below.',
-                                  style:
-                                      FlutterFlowTheme.of(context).labelMedium,
+                                  style: FlutterFlowTheme.of(context)
+                                      .labelMedium
+                                      .override(
+                                        fontFamily: 'Inter',
+                                        letterSpacing: 0.0,
+                                      ),
                                 ),
                               ),
                               Padding(
@@ -110,7 +108,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 child: Container(
                                   width: 370.0,
                                   child: TextFormField(
-                                    controller: _model.emailAddressController,
+                                    controller:
+                                        _model.emailAddressTextController,
                                     focusNode: _model.emailAddressFocusNode,
                                     autofocus: true,
                                     autofillHints: [AutofillHints.email],
@@ -118,7 +117,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     decoration: InputDecoration(
                                       labelText: 'Email',
                                       labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium,
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
@@ -159,11 +162,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       fillColor: FlutterFlowTheme.of(context)
                                           .primaryBackground,
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
                                     keyboardType: TextInputType.emailAddress,
                                     validator: _model
-                                        .emailAddressControllerValidator
+                                        .emailAddressTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -174,7 +181,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 child: Container(
                                   width: 370.0,
                                   child: TextFormField(
-                                    controller: _model.passwordController,
+                                    controller: _model.passwordTextController,
                                     focusNode: _model.passwordFocusNode,
                                     autofocus: true,
                                     autofillHints: [AutofillHints.password],
@@ -182,7 +189,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     decoration: InputDecoration(
                                       labelText: 'Password',
                                       labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium,
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
@@ -239,10 +250,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         ),
                                       ),
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
                                     validator: _model
-                                        .passwordControllerValidator
+                                        .passwordTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -254,7 +269,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   width: 370.0,
                                   child: TextFormField(
                                     controller:
-                                        _model.passwordConfirmController,
+                                        _model.passwordConfirmTextController,
                                     focusNode: _model.passwordConfirmFocusNode,
                                     autofocus: true,
                                     autofillHints: [AutofillHints.password],
@@ -263,7 +278,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     decoration: InputDecoration(
                                       labelText: 'Confirm Password',
                                       labelStyle: FlutterFlowTheme.of(context)
-                                          .labelMedium,
+                                          .labelMedium
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            letterSpacing: 0.0,
+                                          ),
                                       enabledBorder: OutlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
@@ -321,11 +340,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         ),
                                       ),
                                     ),
-                                    style:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
                                     minLines: 1,
                                     validator: _model
-                                        .passwordConfirmControllerValidator
+                                        .passwordConfirmTextControllerValidator
                                         .asValidator(context),
                                   ),
                                 ),
@@ -336,8 +359,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     GoRouter.of(context).prepareAuthEvent();
-                                    if (_model.passwordController.text !=
-                                        _model.passwordConfirmController.text) {
+                                    if (_model.passwordTextController.text !=
+                                        _model.passwordConfirmTextController
+                                            .text) {
                                       ScaffoldMessenger.of(context)
                                           .showSnackBar(
                                         SnackBar(
@@ -352,8 +376,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                     final user = await authManager
                                         .createAccountWithEmail(
                                       context,
-                                      _model.emailAddressController.text,
-                                      _model.passwordController.text,
+                                      _model.emailAddressTextController.text,
+                                      _model.passwordTextController.text,
                                     );
                                     if (user == null) {
                                       return;
@@ -386,6 +410,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         .override(
                                           fontFamily: 'Inter',
                                           color: Colors.white,
+                                          letterSpacing: 0.0,
                                         ),
                                     elevation: 3.0,
                                     borderSide: BorderSide(
@@ -402,8 +427,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     0.0, 12.0, 0.0, 12.0),
                                 child: RichText(
-                                  textScaleFactor:
-                                      MediaQuery.of(context).textScaleFactor,
+                                  textScaler: MediaQuery.of(context).textScaler,
                                   text: TextSpan(
                                     children: [
                                       TextSpan(
@@ -420,6 +444,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                   FlutterFlowTheme.of(context)
                                                       .tertiary,
                                               fontSize: 16.0,
+                                              letterSpacing: 0.0,
                                               fontWeight: FontWeight.w600,
                                             ),
                                         mouseCursor: SystemMouseCursors.click,
@@ -429,8 +454,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                           },
                                       )
                                     ],
-                                    style:
-                                        FlutterFlowTheme.of(context).labelLarge,
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
                                 ),
                               ),
