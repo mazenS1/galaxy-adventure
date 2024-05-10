@@ -189,6 +189,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               ParamType.Document,
             ),
           ),
+        ),
+        FFRoute(
+          name: 'marsquiz1',
+          path: '/marsquiz1',
+          builder: (context, params) => Marsquiz1Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
