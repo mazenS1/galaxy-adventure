@@ -15,8 +15,12 @@ class SettingsModel extends FlutterFlowModel<SettingsWidget> {
 
   // State field(s) for Name widget.
   FocusNode? nameFocusNode;
+  flutterflow
   TextEditingController? nameTextController;
   String? Function(BuildContext, String?)? nameTextControllerValidator;
+  TextEditingController? nameController;
+  String? Function(BuildContext, String?)? nameControllerValidator;
+  main
   // State field(s) for Email widget.
   FocusNode? emailFocusNode;
   TextEditingController? emailTextController;
