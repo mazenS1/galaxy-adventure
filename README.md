@@ -1,3 +1,4 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=mazenS1_galaxy-adventure&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=mazenS1_galaxy-adventure)
 # welcome to our game!
 
 ## first lets get the game running for you!
