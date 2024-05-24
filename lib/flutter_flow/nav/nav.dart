@@ -209,6 +209,72 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'marquiz4',
           path: '/marquiz4',
           builder: (context, params) => Marquiz4Widget(),
+        ),
+        FFRoute(
+          name: 'UranusInfoPage',
+          path: '/UranusInfo',
+          asyncParams: {
+            'gameRecord': getDoc(['games'], GamesRecord.fromSnapshot),
+          },
+          builder: (context, params) => UranusInfoPageWidget(
+            gameRecord: params.getParam(
+              'gameRecord',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'uranusquiz1',
+          path: '/uranusquiz1',
+          builder: (context, params) => Uranusquiz1Widget(),
+        ),
+        FFRoute(
+          name: 'uranusquiz2',
+          path: '/uranusquiz2',
+          builder: (context, params) => Uranusquiz2Widget(),
+        ),
+        FFRoute(
+          name: 'uranusquiz3',
+          path: '/uranusquiz3',
+          builder: (context, params) => Uranusquiz3Widget(),
+        ),
+        FFRoute(
+          name: 'uranusquiz4',
+          path: '/uranusquiz4',
+          builder: (context, params) => Uranusquiz4Widget(),
+        ),
+        FFRoute(
+          name: 'JupiteInfo',
+          path: '/JupiterInfo',
+          asyncParams: {
+            'gameRecord': getDoc(['games'], GamesRecord.fromSnapshot),
+          },
+          builder: (context, params) => JupiteInfoWidget(
+            gameRecord: params.getParam(
+              'gameRecord',
+              ParamType.Document,
+            ),
+          ),
+        ),
+        FFRoute(
+          name: 'Jupiterquiz1',
+          path: '/jupiterquiz1',
+          builder: (context, params) => Jupiterquiz1Widget(),
+        ),
+        FFRoute(
+          name: 'Jupiterquiz2',
+          path: '/jupiterquiz2',
+          builder: (context, params) => Jupiterquiz2Widget(),
+        ),
+        FFRoute(
+          name: 'Jupiterquiz',
+          path: '/jupiterquiz',
+          builder: (context, params) => JupiterquizWidget(),
+        ),
+        FFRoute(
+          name: 'Jupiterquiz3',
+          path: '/jupiterquiz3',
+          builder: (context, params) => Jupiterquiz3Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -18,3 +18,14 @@ export '/mars/marsquiz1/marsquiz1_widget.dart' show Marsquiz1Widget;
 export '/mars/marquiz2/marquiz2_widget.dart' show Marquiz2Widget;
 export '/mars/marquiz3/marquiz3_widget.dart' show Marquiz3Widget;
 export '/mars/marquiz4/marquiz4_widget.dart' show Marquiz4Widget;
+export '/uranus/uranus_info_page/uranus_info_page_widget.dart'
+    show UranusInfoPageWidget;
+export '/uranus/uranusquiz1/uranusquiz1_widget.dart' show Uranusquiz1Widget;
+export '/uranus/uranusquiz2/uranusquiz2_widget.dart' show Uranusquiz2Widget;
+export '/uranus/uranusquiz3/uranusquiz3_widget.dart' show Uranusquiz3Widget;
+export '/uranus/uranusquiz4/uranusquiz4_widget.dart' show Uranusquiz4Widget;
+export '/jupiter/jupite_info/jupite_info_widget.dart' show JupiteInfoWidget;
+export '/jupiter/jupiterquiz1/jupiterquiz1_widget.dart' show Jupiterquiz1Widget;
+export '/jupiter/jupiterquiz2/jupiterquiz2_widget.dart' show Jupiterquiz2Widget;
+export '/jupiter/jupiterquiz/jupiterquiz_widget.dart' show JupiterquizWidget;
+export '/jupiter/jupiterquiz3/jupiterquiz3_widget.dart' show Jupiterquiz3Widget;
