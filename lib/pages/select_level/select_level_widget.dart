@@ -207,21 +207,8 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                           highlightColor: Colors.transparent,
                                           onLongPress: () async {
                                             context.pushNamed(
-                                              'selectLevel',
-                                              queryParameters: {
-                                                'gameRecord': serializeParam(
-                                                  widget.gameRecord,
-                                                  ParamType.Document,
-                                                ),
-                                                'categoryOffset':
-                                                    serializeParam(
-                                                  functions
-                                                      .generateRandomOffset(),
-                                                  ParamType.int,
-                                                ),
-                                              }.withoutNulls,
+                                              'MarsInfo',
                                               extra: <String, dynamic>{
-                                                'gameRecord': widget.gameRecord,
                                                 kTransitionInfoKey:
                                                     TransitionInfo(
                                                   hasTransition: true,
@@ -237,7 +224,7 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                             onPressed: () {
                                               print('Button pressed ...');
                                             },
-                                            text: 'Mars  (coming soon:)',
+                                            text: 'Mars  ',
                                             options: FFButtonOptions(
                                               width: double.infinity,
                                               height: 70.0,
@@ -245,7 +232,9 @@ class _SelectLevelWidgetState extends State<SelectLevelWidget> {
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
                                               iconPadding: EdgeInsetsDirectional
                                                   .fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                              color: Color(0x4C696969),
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .secondary,
                                               textStyle:
                                                   FlutterFlowTheme.of(context)
                                                       .titleSmall

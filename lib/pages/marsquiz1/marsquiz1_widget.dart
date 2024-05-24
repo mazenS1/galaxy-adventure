@@ -668,8 +668,7 @@ class _Marsquiz1WidgetState extends State<Marsquiz1Widget>
                                                                 });
                                                               }
                                                             },
-                                                            text:
-                                                                '4.942 billion years ',
+                                                            text: 'Mars planet',
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 120.0,
@@ -773,7 +772,7 @@ class _Marsquiz1WidgetState extends State<Marsquiz1Widget>
                                                             }
 
                                                             context.pushNamed(
-                                                                'quiz2');
+                                                                'marquiz2');
                                                           },
                                                           text: 'Red Planet',
                                                           options:
@@ -873,8 +872,7 @@ class _Marsquiz1WidgetState extends State<Marsquiz1Widget>
                                                               });
                                                             }
                                                           },
-                                                          text:
-                                                              '100million years ',
+                                                          text: 'dry planet\n',
                                                           options:
                                                               FFButtonOptions(
                                                             width: 120.0,
