@@ -263,7 +263,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                           ));
 
                                       context.pushNamed(
-                                        'quiz1',
+                                        'marsquiz1',
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
