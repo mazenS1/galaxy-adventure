@@ -238,7 +238,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'Earth is the third closest planet to The Sun!',
+                                        'Mars has two small moons named Phobos and Deimos',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
