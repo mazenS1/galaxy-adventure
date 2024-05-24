@@ -55,7 +55,6 @@ dependencies:
   http: 1.2.0
   intl: 0.18.1
   json_path: 0.6.2
-  just_audio: ^0.9.34
   lottie: 2.7.0
   mime_type: 1.0.0
   page_transition: 2.1.0
