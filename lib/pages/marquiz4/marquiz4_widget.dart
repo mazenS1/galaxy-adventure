@@ -13,19 +13,19 @@ import 'package:flutter_animate/flutter_animate.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'marquiz2_model.dart';
-export 'marquiz2_model.dart';
+import 'marquiz4_model.dart';
+export 'marquiz4_model.dart';
 
-class Marquiz2Widget extends StatefulWidget {
-  const Marquiz2Widget({super.key});
+class Marquiz4Widget extends StatefulWidget {
+  const Marquiz4Widget({super.key});
 
   @override
-  State<Marquiz2Widget> createState() => _Marquiz2WidgetState();
+  State<Marquiz4Widget> createState() => _Marquiz4WidgetState();
 }
 
-class _Marquiz2WidgetState extends State<Marquiz2Widget>
+class _Marquiz4WidgetState extends State<Marquiz4Widget>
     with TickerProviderStateMixin {
-  late Marquiz2Model _model;
+  late Marquiz4Model _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -34,7 +34,7 @@ class _Marquiz2WidgetState extends State<Marquiz2Widget>
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => Marquiz2Model());
+    _model = createModel(context, () => Marquiz4Model());
 
     animationsMap.addAll({
       'imageOnActionTriggerAnimation1': AnimationInfo(
@@ -413,7 +413,7 @@ class _Marquiz2WidgetState extends State<Marquiz2Widget>
                                                       AlignmentDirectional(
                                                           0.0, -1.0),
                                                   child: Text(
-                                                    'By how much is Mars day longer?',
+                                                    'how many moons does it have?',
                                                     textAlign: TextAlign.center,
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -423,8 +423,10 @@ class _Marquiz2WidgetState extends State<Marquiz2Widget>
                                                               'Readex Pro',
                                                           color:
                                                               Color(0xFFBD0000),
-                                                          fontSize: 21.0,
+                                                          fontSize: 20.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.w500,
                                                         ),
                                                   ),
                                                 ),
@@ -567,7 +569,7 @@ class _Marquiz2WidgetState extends State<Marquiz2Widget>
                                                               });
                                                             }
                                                           },
-                                                          text: 'same length',
+                                                          text: '4',
                                                           options:
                                                               FFButtonOptions(
                                                             width: 120.0,
@@ -668,7 +670,7 @@ class _Marquiz2WidgetState extends State<Marquiz2Widget>
                                                                 });
                                                               }
                                                             },
-                                                            text: '37 h',
+                                                            text: '0',
                                                             options:
                                                                 FFButtonOptions(
                                                               width: 120.0,
@@ -772,7 +774,7 @@ class _Marquiz2WidgetState extends State<Marquiz2Widget>
                                                             }
 
                                                             context.pushNamed(
-                                                              'marquiz3',
+                                                              'congratsPage',
                                                               extra: <String,
                                                                   dynamic>{
                                                                 kTransitionInfoKey:
@@ -786,7 +788,7 @@ class _Marquiz2WidgetState extends State<Marquiz2Widget>
                                                               },
                                                             );
                                                           },
-                                                          text: '37 min',
+                                                          text: '2',
                                                           options:
                                                               FFButtonOptions(
                                                             width: 120.0,
@@ -884,7 +886,7 @@ class _Marquiz2WidgetState extends State<Marquiz2Widget>
                                                               });
                                                             }
                                                           },
-                                                          text: '37 days',
+                                                          text: '1',
                                                           options:
                                                               FFButtonOptions(
                                                             width: 120.0,

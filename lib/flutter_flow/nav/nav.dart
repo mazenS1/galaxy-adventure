@@ -199,6 +199,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'marquiz2',
           path: '/marquiz2',
           builder: (context, params) => Marquiz2Widget(),
+        ),
+        FFRoute(
+          name: 'marquiz3',
+          path: '/marquiz3',
+          builder: (context, params) => Marquiz3Widget(),
+        ),
+        FFRoute(
+          name: 'marquiz4',
+          path: '/marquiz4',
+          builder: (context, params) => Marquiz4Widget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
