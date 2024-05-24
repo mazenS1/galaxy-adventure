@@ -8,11 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import 'package:provider/provider.dart';
-import 'mars_info_model.dart';
-export 'mars_info_model.dart';
+import 'uranus_info_page_model.dart';
+export 'uranus_info_page_model.dart';
 
-class MarsInfoWidget extends StatefulWidget {
-  const MarsInfoWidget({
+class UranusInfoPageWidget extends StatefulWidget {
+  const UranusInfoPageWidget({
     super.key,
     this.gameRecord,
   });
@@ -20,18 +20,18 @@ class MarsInfoWidget extends StatefulWidget {
   final GamesRecord? gameRecord;
 
   @override
-  State<MarsInfoWidget> createState() => _MarsInfoWidgetState();
+  State<UranusInfoPageWidget> createState() => _UranusInfoPageWidgetState();
 }
 
-class _MarsInfoWidgetState extends State<MarsInfoWidget> {
-  late MarsInfoModel _model;
+class _UranusInfoPageWidgetState extends State<UranusInfoPageWidget> {
+  late UranusInfoPageModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MarsInfoModel());
+    _model = createModel(context, () => UranusInfoPageModel());
   }
 
   @override
@@ -109,7 +109,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'Mars',
+                                        'Uranus',
                                         style: FlutterFlowTheme.of(context)
                                             .displaySmall
                                             .override(
@@ -130,7 +130,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                         alignment:
                                             AlignmentDirectional(0.0, -1.0),
                                         child: Text(
-                                          'The dry earth',
+                                          'The Mysterious Ice Giant on its Side',
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -154,7 +154,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: Image.asset(
-                                            'assets/images/630133522.gif',
+                                            'assets/images/2099654832.gif',
                                             width: 200.0,
                                             height: 200.0,
                                             fit: BoxFit.cover,
@@ -168,7 +168,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 20.0, 0.0, 0.0),
                                   child: Text(
-                                    'Mars Facts!',
+                                    'Uranus Facts!',
                                     style: FlutterFlowTheme.of(context)
                                         .headlineMedium
                                         .override(
@@ -199,7 +199,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'It is nicknamed the Red Planet',
+                                        'Its axis of rotation is tilted at an angle of about 98 degrees.',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -212,7 +212,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'Mars day is slightly longer than Earth`s day (37 min)',
+                                        'average temperatures dropping as low as -224°C',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -225,7 +225,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'Mars is home to the largest volcano in the solar system, Olympus Mons.',
+                                        'The only spacecraft to have visited Uranus up close is Voyager 2',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -238,7 +238,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 10.0, 0.0, 0.0),
                                       child: Text(
-                                        'Mars has two small moons named Phobos and Deimos',
+                                        'Uranus was discovered by the British astronomer William Herschel in 1781',
                                         style: FlutterFlowTheme.of(context)
                                             .titleSmall
                                             .override(
@@ -263,7 +263,7 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                           ));
 
                                       context.pushNamed(
-                                        'marsquiz1',
+                                        'uranusquiz1',
                                         extra: <String, dynamic>{
                                           kTransitionInfoKey: TransitionInfo(
                                             hasTransition: true,
@@ -282,7 +282,8 @@ class _MarsInfoWidgetState extends State<MarsInfoWidget> {
                                       iconPadding:
                                           EdgeInsetsDirectional.fromSTEB(
                                               0.0, 0.0, 0.0, 0.0),
-                                      color: FlutterFlowTheme.of(context).error,
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
