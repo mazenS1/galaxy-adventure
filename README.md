@@ -1,4 +1,4 @@
-### welcome to our game!
+# welcome to our game!
 
 ## first lets get the game running for you!
 
