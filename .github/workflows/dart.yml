@@ -1,4 +1,5 @@
 name: CI
+
 on:
   pull_request:
     branches:
@@ -9,12 +10,14 @@ jobs:
     name: Run flutter test and analyze
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
+      - uses: actions/checkout@v4  # Updated to the latest version
+      - uses: actions/setup-java@v3  # Updated to the latest version
         with:
+          distribution: 'temurin'  # Use the recommended JDK distribution
           java-version: "12.x"
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v2  # Updated to the latest version
         with:
+          flutter-version: '3.10.0'  # Ensure this version includes Dart SDK >= 3.1.0
           channel: "stable"
       - run: flutter pub get
       - run: flutter analyze
@@ -25,12 +28,14 @@ jobs:
     needs: [flutter_test]
     runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
+      - uses: actions/checkout@v4  # Updated to the latest version
+      - uses: actions/setup-java@v3  # Updated to the latest version
         with:
+          distribution: 'temurin'  # Use the recommended JDK distribution
           java-version: "12.x"
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v2  # Updated to the latest version
         with:
+          flutter-version: '3.10.0'  # Ensure this version includes Dart SDK >= 3.1.0
           channel: "stable"
       - run: flutter pub get
       - run: flutter clean
@@ -41,13 +46,16 @@ jobs:
     needs: [flutter_test]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-java@v1
+      - uses: actions/checkout@v4  # Updated to the latest version
+      - uses: actions/setup-java@v3  # Updated to the latest version
         with:
+          distribution: 'temurin'  # Use the recommended JDK distribution
           java-version: "12.x"
-      - uses: subosito/flutter-action@v1
+      - uses: subosito/flutter-action@v2  # Updated to the latest version
         with:
+          flutter-version: '3.10.0'  # Ensure this version includes Dart SDK >= 3.1.0
           channel: "stable"
       - run: flutter pub get
       - run: flutter clean
       - run: flutter build appbundle
+
