@@ -13,11 +13,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      # Set up Flutter
+      # Set up Flutter with a version that includes Dart SDK >= 3.0.0
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.7.7'  # Specify the Flutter version you need
+          flutter-version: '3.10.5'  # Update to the latest version that includes Dart 3.0.0 or higher
 
       - name: Install dependencies
         run: flutter pub get
@@ -29,6 +29,11 @@ jobs:
       # Consider passing '--fatal-infos' for slightly stricter analysis.
       - name: Analyze project source
         run: flutter analyze
+
+      # Ensure you have tests in test/ and a dependency on package:flutter_test
+      - name: Run tests
+        run: flutter test
+
 
       # Ensure you have tests in test/ and a dependency on package:flutter_test
       - name: Run tests
