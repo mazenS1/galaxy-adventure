@@ -87,7 +87,8 @@ dependencies:
   cupertino_icons: ^1.0.0
 
 dependency_overrides:
-  collection: 1.18.0  # Force the use of collection version 1.18.0
+  http: 1.2.0
+  uuid: ^4.0.0
 
 dev_dependencies:
   flutter_lints: 3.0.0
