@@ -33,8 +33,3 @@ jobs:
       # Ensure you have tests in test/ and a dependency on package:flutter_test
       - name: Run tests
         run: flutter test
-
-
-      # Ensure you have tests in test/ and a dependency on package:flutter_test
-      - name: Run tests
-        run: flutter test
